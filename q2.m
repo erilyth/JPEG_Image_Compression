@@ -16,9 +16,9 @@ im = im(:,:,1);
 
 display(im(420:428,45:53));
 
-original_image_dct1 = myDCT(im(420:428,45:53), create_mat_dct());
-original_image_dct2 = myDCT(im(427:435,298:306), create_mat_dct());
-original_image_dct3 = myDCT(im(30:38,230:238), create_mat_dct());
+original_image_dct1 = myDCT(im(420:427,45:52), create_mat_dct());
+original_image_dct2 = myDCT(im(427:434,298:305), create_mat_dct());
+original_image_dct3 = myDCT(im(30:37,230:237), create_mat_dct());
 quantized_image_dct1 = myDCT_dequantization(myDCT_quantization(original_image_dct1, Q, 2), Q, 2);
 quantized_image_dct2 = myDCT_dequantization(myDCT_quantization(original_image_dct2, Q, 2), Q, 2);
 quantized_image_dct3 = myDCT_dequantization(myDCT_quantization(original_image_dct3, Q, 2), Q, 2);

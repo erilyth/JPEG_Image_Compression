@@ -20,13 +20,13 @@ for i = 1:size(im,1)/8
     for j = 1:size(im,2)/8
         current_im = zeros(8,8);
         for k = 1:8
-            if size(im,1) < i*8+1+k
+            if size(im,1) < i*8+k
                 for l = 1:8
                     current_im(k,l) = 0;
                 end
             else
                 for l = 1:8
-                    if size(im,2) < j*8+1+l
+                    if size(im,2) < j*8+l
                         current_im(k,l) = 0;
                     else
                         current_im(k,l) = im(i*8+k,j*8+l);
