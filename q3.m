@@ -50,7 +50,12 @@ figure, imshow(im, [0 255]);
 figure, imshow(dct_image, [0 255]);
 
 %Observations:
-%1) We can see how the boundaries of the original image can be seen.
+%1) We can see how the boundaries of the original image can be seen. The
+%changes of frequencies we get in 8x8 squares where there are a lot of
+%colours are of a wider range, so the DCT matrix has lesser number of
+%zeros, so we observe small white patches instead of just small white dots. 
+%In places where the colours of the image are similar, there are a
+%lot of zeros, so we observe small white dots.
 %2) Just the DCT without any quantization can help us identify the image in
 %black and white when we construct an image from the DCT.
 %3) These can help us figure out divisions of our actual image which can be
