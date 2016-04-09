@@ -14,7 +14,7 @@ Q=[16  11  10  16  24  40  51  61;
 im = imread('LAKE.TIF');
 im = im(:,:,1);
 
-quantized_image = zeros(size(im,1)+8, size(im,2)+8);
+dct_image = zeros(size(im,1)+8, size(im,2)+8);
 
 for i = 1:size(im,1)/8
     for j = 1:size(im,2)/8
@@ -40,14 +40,14 @@ for i = 1:size(im,1)/8
         %disp(quantized_image_dct);
         for k = 1:8
             for l = 1:8
-                quantized_image(i*8+k,j*8+l) = current_dct(k,l);
+                dct_image(i*8+k,j*8+l) = current_dct(k,l);
             end
         end
     end
 end
 
 figure, imshow(im, [0 255]);
-figure, imshow(quantized_image, [0 255]);
+figure, imshow(dct_image, [0 255]);
 
 %Observations:
 %1) We can see how the boundaries of the original image can be seen.
