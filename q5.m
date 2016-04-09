@@ -16,11 +16,11 @@ im = imread('LAKE.TIF');
 im = im(:,:,1);
 
 
-RMSE_list = zeros(1,100);
-entropy_list = zeros(1,100);
+RMSE_list = zeros(1,101);
+entropy_list = zeros(1,101);
 
 %Loop over p which we use as c for the quantization
-for p = 1:2:100
+for p = 1:5:100
     quantized_image = zeros(size(im,1)+8, size(im,2)+8);
     for i = 1:size(im,1)/8
         for j = 1:size(im,2)/8
@@ -57,7 +57,14 @@ for p = 1:2:100
     RMSE_list(p) = RMSE(im, quantized_image);
 end
 
+%Remove 0 entries
+entropy_list = entropy_list(entropy_list~=0);
+RMSE_list = RMSE_list(RMSE_list~=0);
+
 disp(entropy_list);
 disp(RMSE_list);
 
-plot(entropy_list, RMSE_list);
+%plot(entropy_list);
+%plot(RMSE_list);
+%Plot of entropy vs RMSE errors for different values of c (Illumination matrix)
+plot(entropy_list, RMSE_list,'b',entropy_list,RMSE_list,'b*');

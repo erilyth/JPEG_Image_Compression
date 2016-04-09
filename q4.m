@@ -56,23 +56,25 @@ disp(My_entropy(quantized_image));
 disp(RMSE(im, quantized_image));
 
 %Observations:
-%1)With c = 1, Entropy of the quantized image = -4785900, RMSE of original
-%and quantized image = 21.6374
-%2)With c = 3, Entropy of the quantized image = -4787500, RMSE of original
-%and quantized image = 22.3920. At this point the distortions of the
+%1)With c = 1, Entropy of the quantized image = -4790100, RMSE of original
+%and quantized image = 20.1380
+%2)With c = 3, Entropy of the quantized image = -4790000, RMSE of original
+%and quantized image = 20.9356. At this point the distortions of the
 %reconstructed image are just perceptible. So the highest value of c = 3,
 %so that the distortions are just perceptible.
-%3)With c = 5, Entropy of the quantized image = -4788400, RMSE of original
-%and quantized image = 22.9974.
-%4)With c = 10, Entropy of the quantized image = -4787600, RMSE of original
-%and quantized image = 24.8226. The RMSE is quite higher compared to with
+%3)With c = 5, Entropy of the quantized image = -4789800, RMSE of original
+%and quantized image = 21.6818.
+%4)With c = 10, Entropy of the quantized image = -4789000, RMSE of original
+%and quantized image = 23.4657. The RMSE is quite higher compared to with
 %c=1, so we can see that the image is distorted. On observing the image, we
 %will find a lot of places where it is hard to identify boundaries, edges
 %etc since the image is heavily distorted.
-%5)With c = 30, Entropy of the quantized image = -4783600, RMSE of original
-%and quantized image = 31.7379. We can barely tell that the two images are
+%5)With c = 30, Entropy of the quantized image = -4784100, RMSE of original
+%and quantized image = 30.6674. We can barely tell that the two images are
 %the same. We can't identify any specific object in the image.
 
-%We can see that the Entropy first increased as c increased and then it
-%started decreasing even though c increased. The RMSE however always
-%increased as c increased, since the image became more and more distorted.
+%We can see that the Entropy goes on decreasing as c increased. As c increases,
+%the image becomes distorted and nearby pixels start having similar/same
+%values, so the entropy of the image decreases.
+%The RMSE however always increased as c increased, since the image became 
+%more and more distorted.

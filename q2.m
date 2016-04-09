@@ -44,9 +44,10 @@ figure, imshow(quantized_image2, [0 255]);
 %Observations:
 %1)In all the quantized DCTs most of the entries towards the bottom right
 %are 0's and has a lot less entries that need to be stored compared to the
-%non-qunatized one.
+%non-qunatized one. In the non quantized DCTs, their magnitude tends to
+%fade as we go to the bottom right.
 %2)The quantized images at 427,298 and 30,230 are quite similar to each other even
 %though their DCTs don't match completely. In the DCT at 30,230 has only 1
-%entry in the DCT which matches the top left entry of the DCT at 427, 298.
+%entry in the DCT which matches the top left entry of the DCT at 427,298.
 %3)The quantized image at 420,45 is somewhat like a colour gradient from
 %left to right (brightest at left, darkest at right)
