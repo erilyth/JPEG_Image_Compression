@@ -72,10 +72,17 @@ disp(RMSE(im, quantized_image));
 %5)With c = 30, Entropy of the quantized image = 0.3512, RMSE of original
 %and quantized image = 30.6674. We can barely tell that the two images are
 %the same. We can't identify any specific object in the image.
+%6)With c = 220, Entropy of the quantized image = 0.2434, RMSE of original
+%and quantized image = 138.3611.
+%7)With c = 225, Entropy of the quantized image = 0.0642, RMSE of original
+%and quantized image = 138.7096.
 
 %The images also get a boundary when we reconstruct it.
-%We can see that the Entropy goes on increasing as c increased. As c increases,
+%We can see that the Entropy goes on increasing as c increased initially 
+%and then drops later on as c increases. As c increases,
 %the image becomes distorted and nearby pixels start having more and more 
-%different values, so the entropy of the image increases.
+%different values, so the entropy of the image increases earlier on, but 
+%later, all nearby pixels start attaining the same colour, so the entropy 
+%decreases.
 %The RMSE always increased as c increased, since the image became 
 %more and more distorted.
